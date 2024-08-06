@@ -1,0 +1,16 @@
+version: 1.0.1
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - voldatabase:/data/db
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: "notagoodpassword"
+volumes:
+  voldatabase:
